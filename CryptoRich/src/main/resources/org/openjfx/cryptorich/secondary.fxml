@@ -1,16 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Button?>
-<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.openjfx.cryptorich.SecondaryController">
-    <children>
-        <Label text="Secondary View" />
-        <Button fx:id="secondaryButton" text="Switch to Primary View" onAction="#switchToPrimary" />
-    </children>
-    <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-    </padding>
-</VBox>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <TextField layoutX="541.0" layoutY="246.0" promptText="Brugernavn" style="-fx-background-color: transparent; -fx-border-color: #1D2951 #1D2951; -fx-border-width: 0px 0px 2px 0px;" />
+      <PasswordField layoutX="542.0" layoutY="294.0" promptText="Password" style="-fx-background-color: transparent; -fx-border-color: #1D2951 #1D2951; -fx-border-width: 0px 0px 2px 0px;" />
+      <Text layoutX="541.0" layoutY="212.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Login som bruger">
+         <font>
+            <Font name="System Bold" size="21.0" />
+         </font>
+      </Text>
+      <Button layoutX="543.0" layoutY="350.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="161.0" style="-fx-background-color: #006097 #006097;" text="Login" textFill="WHITE" />
+      <AnchorPane layoutX="-1.0" prefHeight="600.0" prefWidth="418.0" style="-fx-background-color: #006097 #006097;">
+         <children>
+            <Button layoutX="150.0" layoutY="348.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="126.0" text="Sign up" />
+            <Text fill="WHITE" layoutX="156.0" layoutY="323.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ingen Bruger?">
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font>
+            </Text>
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="137.0" layoutY="125.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Icons/users-icon.png" />
+               </image>
+            </ImageView>
+         </children></AnchorPane>
+      <ImageView fitHeight="32.0" fitWidth="27.0" layoutX="509.0" layoutY="247.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Icons/User.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="23.0" fitWidth="21.0" layoutX="513.0" layoutY="300.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Icons/LoginKey.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
