@@ -1,4 +1,5 @@
 module-info.class
 org/openjfx/cryptorich/PrimaryController.class
 org/openjfx/cryptorich/App.class
+org/openjfx/cryptorich/RegistreController.class
 org/openjfx/cryptorich/SecondaryController.class
