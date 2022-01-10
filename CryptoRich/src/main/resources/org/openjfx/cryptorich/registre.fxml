@@ -9,7 +9,7 @@
 
 <AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.openjfx.cryptorich.RegistreController">
    <children>
-      <Text layoutX="333.0" layoutY="181.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Opret bruger">
+      <Text layoutX="330.0" layoutY="181.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Opret bruger">
          <font>
             <Font size="28.0" />
          </font>
@@ -19,8 +19,9 @@
             <Button layoutX="688.0" layoutY="27.0" mnemonicParsing="false" onAction="#switchToSecondary" text="Tilbage" />
          </children>
       </AnchorPane>
-      <TextField layoutX="325.0" layoutY="217.0" promptText="Brugernavn" style="-fx-background-color: Transparent; -fx-border-color: #006097 #006097 #006097 #006097; -fx-border-width: 0px 0px 2px 0px;" />
-      <PasswordField layoutX="325.0" layoutY="274.0" promptText="Password" style="-fx-background-color: transparent; -fx-border-color: #006097 #006097 #006097 #006097; -fx-border-width: 0px 0px 2px 0px0px 0px 2px 0px;" />
-      <PasswordField layoutX="323.0" layoutY="324.0" promptText="Bekræft password" style="-fx-background-color: transparent; -fx-border-color: Black; -fx-border-width: 0px 0px 2px 0px0px 0px 2px 0px;" />
+      <TextField layoutX="324.0" layoutY="217.0" promptText="Brugernavn" style="-fx-background-color: Transparent; -fx-border-color: #006097 #006097 #006097 #006097; -fx-border-width: 0px 0px 2px 0px;" />
+      <PasswordField layoutX="324.0" layoutY="274.0" promptText="Password" style="-fx-background-color: transparent; -fx-border-color: #006097 #006097 #006097 #006097; -fx-border-width: 0px 0px 2px 0px0px 0px 2px 0px;" />
+      <PasswordField layoutX="324.0" layoutY="324.0" promptText="Bekræft password" style="-fx-background-color: transparent; -fx-border-color: Black; -fx-border-width: 0px 0px 2px 0px0px 0px 2px 0px;" />
+      <Button layoutX="324.0" layoutY="379.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="161.0" style="-fx-background-color: #006097 #006097 #006097 #006097 #006097 #006097 #006097 #006097;" text="Opret bruger" textFill="WHITE" />
    </children>
 </AnchorPane>
