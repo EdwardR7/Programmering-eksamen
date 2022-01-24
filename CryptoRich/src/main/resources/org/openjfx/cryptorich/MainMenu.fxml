@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.RadioMenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.openjfx.cryptorich.MainMenuController">
+   <children>
+      <ListView layoutX="582.0" layoutY="210.0" prefHeight="303.0" prefWidth="76.0" />
+      <Text layoutX="590.0" layoutY="205.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Watchlist">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Text>
+      <Text layoutX="674.0" layoutY="205.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Popular assets">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <ListView layoutX="679.0" layoutY="210.0" prefHeight="303.0" prefWidth="76.0" />
+      <Text layoutX="38.0" layoutY="92.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Portfolio balance:">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Text>
+      <Label layoutX="205.0" layoutY="74.0" text="0$">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+      <LineChart layoutX="-10.0" layoutY="112.0" prefHeight="440.0" prefWidth="560.0">
+        <xAxis>
+          <CategoryAxis tickLabelGap="0.1" tickLength="1.0" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis label="Værdi" side="LEFT" tickLabelGap="0.1" tickLength="6.0" upperBound="1000.0" />
+        </yAxis>
+      </LineChart>
+      <Button layoutX="581.0" layoutY="512.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="76.0" text="Add asset" />
+      <MenuButton layoutX="268.0" layoutY="545.0" mnemonicParsing="false" text="Kalendertid">
+        <items>
+          <MenuItem mnemonicParsing="false" text="ÅTD" />
+          <MenuItem mnemonicParsing="false" text="i dag" />
+        </items>
+      </MenuButton>
+      <MenuBar prefHeight="29.0" prefWidth="800.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="Oversigt">
+            <items>
+                  <RadioMenuItem mnemonicParsing="false" onAction="#switchToMinMainMenu" text="Min portfølje">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="Menu" />
+                     </toggleGroup>
+                  </RadioMenuItem>
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Konto">
+            <items>
+                  <RadioMenuItem mnemonicParsing="false" onAction="#switchToKøbSælg" text="Køb/sælg" toggleGroup="$Menu" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Simulation">
+            <items>
+                  <RadioMenuItem mnemonicParsing="false" text="Fibonacci Retracement" toggleGroup="$Menu" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <RadioMenuItem mnemonicParsing="false" text="Forventet afkast" toggleGroup="$Menu" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </children>
+</AnchorPane>

@@ -10,4 +10,9 @@ public class SecondaryController {
         App.setRoot("registre");
     }
     
+      @FXML
+    private void switchToMainMenu() throws IOException {
+        App.setRoot("MainMenu");
+    }
+    
 }
