@@ -81,5 +81,9 @@
           </Menu>
         </menus>
       </MenuBar>
+      <Text layoutX="572.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sorteringsalgoritme Popular assets:" />
+      <Button layoutX="572.0" layoutY="131.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="173.0" text="Heap algorithm" />
+      <Button layoutX="572.0" layoutY="72.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="173.0" text="Bubble algorithm" />
+      <Text layoutX="572.0" layoutY="124.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sorteringsalgoritme Watchlist:" />
    </children>
 </AnchorPane>
