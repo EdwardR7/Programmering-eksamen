@@ -60,7 +60,7 @@
         <menus>
           <Menu mnemonicParsing="false" text="Oversigt">
             <items>
-                  <RadioMenuItem mnemonicParsing="false" onAction="#switchToMinMainMenu" text="Min portfølje">
+                  <RadioMenuItem mnemonicParsing="false" onAction="#switchToMinMainMenu" text="Min portefølje">
                      <toggleGroup>
                         <ToggleGroup fx:id="Menu" />
                      </toggleGroup>
@@ -76,7 +76,7 @@
             <items>
                   <RadioMenuItem mnemonicParsing="false" text="Fibonacci Retracement" toggleGroup="$Menu" />
                   <SeparatorMenuItem mnemonicParsing="false" />
-                  <RadioMenuItem mnemonicParsing="false" text="Forventet afkast" toggleGroup="$Menu" />
+                  <RadioMenuItem mnemonicParsing="false" onAction="#switchToForventetAfkast" text="Forventet afkast" toggleGroup="$Menu" />
             </items>
           </Menu>
         </menus>

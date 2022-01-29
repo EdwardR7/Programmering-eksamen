@@ -30,6 +30,11 @@ public class KøbSælgController implements Initializable {
     @FXML
     private void switchToKøbSælg() throws IOException {
         App.setRoot("KøbSælg");
+    }
+        
+    @FXML
+    private void switchToForventetAfkast() throws IOException {
+        App.setRoot("ForventetAfkast");
     
     }    
     

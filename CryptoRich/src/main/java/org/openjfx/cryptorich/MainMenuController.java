@@ -29,6 +29,10 @@ public class MainMenuController implements Initializable  {
     private void switchToKøbSælg() throws IOException {
         App.setRoot("KøbSælg");
     }
+    @FXML
+    private void switchToForventetAfkast() throws IOException {
+        App.setRoot("ForventetAfkast");
+    }
     
    
     @FXML
@@ -51,8 +55,6 @@ public class MainMenuController implements Initializable  {
                             throw new Exception("Not supported yet."); 
                             
                         } catch (Exception ex) {
-                            
-                            ex.printStackTrace();
                         }
         }
 
