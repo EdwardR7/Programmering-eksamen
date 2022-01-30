@@ -8,10 +8,12 @@ package org.openjfx.cryptorich;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
+import javafx.scene.control.SelectionMode;
 import javafx.scene.control.TextArea;
 
 /**
@@ -43,28 +45,42 @@ public class MainMenuController implements Initializable  {
     
     @FXML
     private Button AssetButton;
-   
-   
-   String[] Assets = {"Bitcoin","Ethereum","Cardano","Loopring","Solana", "Binance", "XRP","Dogecoin","Polkadot","SHIBA","Polygon","Polkadot","Cosmos","Chainlink","Algorand","Quant","MANA"};
     
-  
+    @FXML
+    private Button RemoveAsset;
+   
+   //String Array
+   String[] Assets = {"Bitcoin","Ethereum","Cardano","Loopring","Solana", "Binance", "XRP","Dogecoin","Polkadot","SHIBA","Polygon","Polkadot","Cosmos","Chainlink","Algorand","Quant","MANA"};
+
    
        @Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
    
+    //AssetList henter og tilføjer alle Items fra String Array'et Assets
     AssetList.getItems().addAll(Assets);
 		
 }
   
         public void AddAssets(){
                 
+           //Tilføjer den valgte item fra AssetList til WatchList 
            WatchList.appendText(AssetList.getSelectionModel().getSelectedItem()+ "     ");
+           
+           //Flere Items kan blive valgt
+            AssetList.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
   
+         
        }
  
        
-        
-        
+       public void RemoveAsset(){
+       
+           //Fjerner Assets man ikke ønsker at se som værende populære
+           int AssetSelectionID = AssetList.getSelectionModel().getSelectedIndex();
+       AssetList.getItems().remove(AssetSelectionID);
+      
+       
+       }      
      
 
 }        
