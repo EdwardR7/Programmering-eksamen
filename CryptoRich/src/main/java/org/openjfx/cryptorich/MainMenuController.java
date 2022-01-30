@@ -8,11 +8,11 @@ package org.openjfx.cryptorich;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
+import javafx.scene.control.TextArea;
 
 /**
  * FXML Controller class
@@ -38,37 +38,36 @@ public class MainMenuController implements Initializable  {
     @FXML
     private ListView<String> AssetList;
     
-    String[] Assets = {"Bitcoin","Ethereum","Cardano","Loopring","Solana", "Binance", "XRP","Dogecoin","Polkadot","SHIBA","Polygon","Polkadot","Cosmos","Chainlink","Algorand","Quant","MANA"};
+    @FXML
+    private TextArea WatchList;
+    
+    @FXML
+    private Button AssetButton;
    
+   
+   String[] Assets = {"Bitcoin","Ethereum","Cardano","Loopring","Solana", "Binance", "XRP","Dogecoin","Polkadot","SHIBA","Polygon","Polkadot","Cosmos","Chainlink","Algorand","Quant","MANA"};
     
-    @Override
+  
+   
+       @Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
-    
+   
     AssetList.getItems().addAll(Assets);
 		
-		AssetList.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
+}
+  
+        public void AddAssets(){
+                
+           WatchList.appendText(AssetList.getSelectionModel().getSelectedItem()+ "     ");
+  
+       }
+ 
        
-                    @Override
-        public void changed(ObservableValue<? extends String> arg0, String arg1, String arg2) {
-            
-                        try {
-                            throw new Exception("Not supported yet."); 
-                            
-                        } catch (Exception ex) {
-                        }
-        }
-
-
-    
-    //Simulation
-            
-                  
-                });
-}
-    
-}
-
         
+        
+     
+
+}        
         
         
         
