@@ -14,6 +14,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
+import java.lang.Math;
 
 /**
  * FXML Controller class
@@ -41,7 +42,9 @@ public class ForventetAfkastController implements Initializable {
     @FXML
     private Slider StartbeløbSlider, AfkastSlider, TidshorisontSlider;
     
-    int StartBeløbVærdi, AfkastVærdi, TidshorisontVærdi;
+    static public int StartBeløbVærdi, AfkastVærdi, TidshorisontVærdi;
+    
+    static public double x;
     
        @Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
@@ -91,23 +94,29 @@ public class ForventetAfkastController implements Initializable {
 	}    
         
         public void Beregn(){
-        
-         //Beregning af de satte værdier
-         int x = (((StartBeløbVærdi/100)*(AfkastVærdi))*TidshorisontVærdi)+StartBeløbVærdi;
-            System.out.println(x);
             
-            
-//Renters rente effekt 
-        //    if(TidshorisontVærdi>=2){
+//Renters rente effekt, hvis tidshorisont er større end 1 år 
+        if(TidshorisontVærdi>1){
                 
-         //      x = (StartBeløbVærdi * (1+(AfkastVærdi/100))^TidshorisontVærdi);
-     //   }
-            
-       PorteføljeLabel.setText(Integer.toString(x)+" kr");
-		
+ //Beregning            
+         x = (double) StartBeløbVærdi * Math.pow(1+((double)AfkastVærdi/100),(double)TidshorisontVærdi);
+                     System.out.println(x);
+//Når det er 1 år                     
+   } else {
+             x = ((((double)StartBeløbVærdi/100)*((double)AfkastVærdi))*(double)TidshorisontVærdi)+(double)StartBeløbVærdi;
+             
+            System.out.println(x);
         }
-    
+        
+//Ændre vores label til værdien af x            
+       PorteføljeLabel.setText(Double.toString(x)+" kr");
+		
+      
+        }
 }
+
+    
+
         
 
                         
