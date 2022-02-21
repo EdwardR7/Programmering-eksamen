@@ -82,8 +82,8 @@
         </menus>
       </MenuBar>
       <Text layoutX="572.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sorteringsalgoritme Popular assets:" />
-      <Button layoutX="572.0" layoutY="131.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="173.0" text="Heap algorithm" />
-      <Button layoutX="572.0" layoutY="72.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="173.0" text="Bubble algorithm" />
+      <Button fx:id="HeapAlgoritme" layoutX="572.0" layoutY="131.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="173.0" text="Heap algorithm" />
+      <Button fx:id="BubbleAlgoritme" layoutX="572.0" layoutY="72.0" mnemonicParsing="false" onAction="#SorteringsalgoritmeBubble" prefHeight="27.0" prefWidth="173.0" text="Bubble algorithm" />
       <Text layoutX="572.0" layoutY="124.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sorteringsalgoritme Watchlist:" />
       <TextArea fx:id="WatchList" accessibleRole="LIST_VIEW" editable="false" layoutX="569.0" layoutY="210.0" prefHeight="303.0" prefWidth="88.0" wrapText="true" />
       <Button fx:id="RemoveAsset" layoutX="680.0" layoutY="512.0" mnemonicParsing="false" onAction="#RemoveAsset" prefHeight="27.0" prefWidth="86.0" text="Remove" />

@@ -48,6 +48,12 @@ public class MainMenuController implements Initializable  {
     
     @FXML
     private Button RemoveAsset;
+    
+    @FXML
+    private Button BubbleAlgoritme;
+    
+    @FXML
+    private Button HeapAlgoritme;
    
    //String Array
    String[] Assets = {"Bitcoin","Ethereum","Cardano","Loopring","Solana", "Binance", "XRP","Dogecoin","Polkadot","SHIBA","Polygon","Polkadot","Cosmos","Chainlink","Algorand","Quant","MANA"};
@@ -72,7 +78,6 @@ public class MainMenuController implements Initializable  {
          
        }
  
-       
        public void RemoveAsset(){
        
            //Fjerner Assets man ikke ønsker at se som værende populære
@@ -82,8 +87,34 @@ public class MainMenuController implements Initializable  {
        
        }      
      
+       
+       
+       @FXML
+     public void SorteringsalgoritmeBubble(){
+            
+         char charArray[] = WatchList.getText().toCharArray();
+        int size = charArray.length;
 
-}        
+        for (int i = 0; i < size; i++) {
+            for (int j = i + 1; j < size; j++) {
+                if (charArray[i] > charArray[j]) {
+                    char temp = charArray[i];
+                    charArray[i] = charArray[j];
+                    charArray[j] = temp;
+
+                }
+            }
+
+        }
+        WatchList.clear();
+        WatchList.setText(new String(charArray));
+    }
+}
+      
+      
+      
+
+       
         
         
         
