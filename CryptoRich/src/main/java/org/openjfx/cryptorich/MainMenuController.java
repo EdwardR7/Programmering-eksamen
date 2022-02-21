@@ -41,7 +41,7 @@ public class MainMenuController implements Initializable  {
     private ListView<String> AssetList;
     
     @FXML
-    private TextArea WatchList;
+     TextArea WatchList;
     
     @FXML
     private Button AssetButton;
@@ -84,7 +84,8 @@ public class MainMenuController implements Initializable  {
            int AssetSelectionID = AssetList.getSelectionModel().getSelectedIndex();
        AssetList.getItems().remove(AssetSelectionID);
        
-       }      
+       } 
+     
      
        @FXML
      public void SorteringsalgoritmeBubble(){
@@ -106,7 +107,11 @@ public class MainMenuController implements Initializable  {
         WatchList.clear();
         WatchList.setText(new String(charArray));
     }
+
+    
 }
+
+    
       
       
       
