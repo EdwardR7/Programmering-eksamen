@@ -83,12 +83,9 @@ public class MainMenuController implements Initializable  {
            //Fjerner Assets man ikke ønsker at se som værende populære
            int AssetSelectionID = AssetList.getSelectionModel().getSelectedIndex();
        AssetList.getItems().remove(AssetSelectionID);
-      
        
        }      
      
-       
-       
        @FXML
      public void SorteringsalgoritmeBubble(){
             
