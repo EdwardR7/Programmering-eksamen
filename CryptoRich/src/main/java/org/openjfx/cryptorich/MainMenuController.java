@@ -150,6 +150,9 @@ import javafx.scene.control.ToggleGroup;
      
     //Giver vores LineChart dataen fra vores series 
     PortfolioGraph.getData().add(series);
+    
+    //Exit method. Returner en gang når method er kørt, da det er public final
+    PortfolioGraph.animatedProperty();
      }
      
      
