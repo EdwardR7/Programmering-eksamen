@@ -9,19 +9,27 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.chart.LineChart;
+import javafx.scene.chart.XYChart;
+import javafx.scene.chart.XYChart.Series;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.control.SelectionMode;
 import javafx.scene.control.TextArea;
+import javafx.scene.control.ToggleGroup;
 
 /**
  * FXML Controller class
  *
  * @author edwardrostomian
  */
-public class MainMenuController implements Initializable  {
+ public class MainMenuController implements Initializable  {
+
+    @FXML
+    private ToggleGroup Menu;
     
   @FXML
     private void switchToMinMainMenu() throws IOException {
@@ -41,7 +49,7 @@ public class MainMenuController implements Initializable  {
     private ListView<String> AssetList;
     
     @FXML
-     TextArea WatchList;
+    TextArea WatchList;
     
     @FXML
     private Button AssetButton;
@@ -53,9 +61,13 @@ public class MainMenuController implements Initializable  {
     private Button BubbleAlgoritme;
     
     @FXML
-    private Button HeapAlgoritme;
+    private LineChart<String, Number> PortfolioGraph;
+            
+    @FXML
+    private Button GraphUpdater;
    
-   //String Array
+    
+    //Assets - String Array
    String[] Assets = {"Bitcoin","Ethereum","Cardano","Loopring","Solana", "Binance", "XRP","Dogecoin","Polkadot","SHIBA","Polygon","Polkadot","Cosmos","Chainlink","Algorand","Quant","MANA"};
 
    
@@ -67,6 +79,7 @@ public class MainMenuController implements Initializable  {
 		
 }
   
+    @FXML
         public void AddAssets(){
                 
            //Tilføjer den valgte item fra AssetList til WatchList 
@@ -78,6 +91,7 @@ public class MainMenuController implements Initializable  {
          
        }
  
+    @FXML
        public void RemoveAsset(){
        
            //Fjerner Assets man ikke ønsker at se som værende populære
@@ -85,9 +99,10 @@ public class MainMenuController implements Initializable  {
        AssetList.getItems().remove(AssetSelectionID);
        
        } 
-     
-     
-       @FXML
+      
+      
+   //Sorteringsalgoritme method    
+    @FXML
      public void SorteringsalgoritmeBubble(){
             
          char charArray[] = WatchList.getText().toCharArray();
@@ -107,9 +122,41 @@ public class MainMenuController implements Initializable  {
         WatchList.clear();
         WatchList.setText(new String(charArray));
     }
-
+     
     
+    //LineChart - vores graf 
+    //Data -> XYChart 
+     public void GraphLoad(){
+         
+     //Clear data sådan at den kun viser en update pr. gang man kører denne method    
+     PortfolioGraph.getData().clear();
+     
+     //Laver vores series
+     XYChart.Series<String, Number> series = new XYChart.Series<String, Number>();
+     
+     //Definerer vores punkter
+     series.getData().add(new XYChart.Data<String, Number>("Jan", 200));
+     series.getData().add(new XYChart.Data<String, Number>("Feb", 300));
+     series.getData().add(new XYChart.Data<String, Number>("Marts", 400));
+     series.getData().add(new XYChart.Data<String, Number>("April", 200));
+     series.getData().add(new XYChart.Data<String, Number>("Maj", 300));
+     series.getData().add(new XYChart.Data<String, Number>("Juni", 400));
+     series.getData().add(new XYChart.Data<String, Number>("Juli", 400));
+     series.getData().add(new XYChart.Data<String, Number>("Aug", 800));
+     series.getData().add(new XYChart.Data<String, Number>("Sep", 700));
+     series.getData().add(new XYChart.Data<String, Number>("Okt", 900));
+     series.getData().add(new XYChart.Data<String, Number>("Nov", 850));
+     series.getData().add(new XYChart.Data<String, Number>("Dec", 1000));
+     
+    //Giver vores LineChart dataen fra vores series 
+    PortfolioGraph.getData().add(series);
+     }
+     
+     
 }
+        
+    
+
 
     
       

@@ -8,8 +8,6 @@
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
-<?import javafx.scene.control.MenuButton?>
-<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.RadioMenuItem?>
 <?import javafx.scene.control.SeparatorMenuItem?>
 <?import javafx.scene.control.TextArea?>
@@ -41,21 +39,15 @@
             <Font size="19.0" />
          </font>
       </Label>
-      <LineChart layoutX="-10.0" layoutY="112.0" prefHeight="440.0" prefWidth="560.0">
+      <LineChart fx:id="PortfolioGraph" layoutX="-10.0" layoutY="112.0" legendVisible="false" prefHeight="440.0" prefWidth="560.0">
         <xAxis>
-          <CategoryAxis tickLabelGap="0.1" tickLength="1.0" />
+          <CategoryAxis animated="false" tickLabelGap="0.1" tickLength="1.0" tickMarkVisible="false" />
         </xAxis>
         <yAxis>
-          <NumberAxis label="Værdi" side="LEFT" tickLabelGap="0.1" tickLength="6.0" upperBound="1000.0" />
+          <NumberAxis animated="false" label="Værdi" side="LEFT" tickLabelGap="0.1" tickLength="6.0" upperBound="1000.0" />
         </yAxis>
       </LineChart>
       <Button fx:id="AssetButton" layoutX="570.0" layoutY="512.0" mnemonicParsing="false" onAction="#AddAssets" prefHeight="27.0" prefWidth="88.0" text="Add asset" />
-      <MenuButton layoutX="268.0" layoutY="545.0" mnemonicParsing="false" text="Kalendertid">
-        <items>
-          <MenuItem mnemonicParsing="false" text="ÅTD" />
-          <MenuItem mnemonicParsing="false" text="i dag" />
-        </items>
-      </MenuButton>
       <MenuBar prefHeight="29.0" prefWidth="800.0">
         <menus>
           <Menu mnemonicParsing="false" text="Oversigt">
@@ -85,5 +77,6 @@
       <Button fx:id="BubbleAlgoritme" layoutX="572.0" layoutY="104.0" mnemonicParsing="false" onAction="#SorteringsalgoritmeBubble" prefHeight="27.0" prefWidth="173.0" text="Bubble algorithm" />
       <TextArea fx:id="WatchList" accessibleRole="LIST_VIEW" editable="false" layoutX="569.0" layoutY="210.0" prefHeight="303.0" prefWidth="88.0" wrapText="true" />
       <Button fx:id="RemoveAsset" layoutX="680.0" layoutY="512.0" mnemonicParsing="false" onAction="#RemoveAsset" prefHeight="27.0" prefWidth="86.0" text="Remove" />
+      <Button fx:id="GraphUpdater" layoutX="270.0" layoutY="552.0" mnemonicParsing="false" onAction="#GraphLoad" text="Update graph" />
    </children>
 </AnchorPane>
