@@ -10,6 +10,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.security.*;
 
 /**
  *
@@ -48,6 +49,7 @@ public class DBMetoder {
             if (UserExists == "Username already exists") {
                 UserExists = null;
             } else {
+
                 try {
                     ps = conn.prepareStatement(sql);
                     rs = ps.executeQuery();
@@ -99,8 +101,37 @@ public class DBMetoder {
         }
 
         try {
-            //Allows us to insert a username from another class into our sql statements, which then can return a true or false value, based on whether our login statements match a user in the database//
+            //Vha. MessageDigest kan vi anvende en hashing algoritme.... her SHA-256 ...
+            //prøv f.eks. MD5 og se om du kan bryde den ved at søge på nettet!
+            MessageDigest md = MessageDigest.getInstance("SHA-256");
 
+            //MassageDigest objektet "fodres" med teksten, der skal "hashes"
+            md.update(password.getBytes());
+
+            //digest funktionen giver "hash-værdien", men i hexadecimale bytes 
+            byte[] byteList = md.digest();
+
+            //Her anvendes processings hex funktion, der kan konvertere hexadecimale bytes til Strings
+            //så det er muligt at læse "hash-værdien"
+            StringBuffer hashedValueBuffer = new StringBuffer();
+            for (byte b : byteList) {
+                hashedValueBuffer.append(Integer.toHexString(b));
+            }
+
+            //Her udskrives den oprindelige tekst
+            System.out.println("Den oprindelige tekst: " + password);
+            //Her udskrives "hash-værdien" af teksten
+
+            System.out.println("SHA-256 værdien af teksten: " + hashedValueBuffer.toString());
+
+            password = hashedValueBuffer.toString();
+        } catch (Exception e) {
+            System.out.println("Exception: " + e);
+        }
+
+        try {
+
+            //Allows us to insert a username from another class into our sql statements, which then can return a true or false value, based on whether our login statements match a user in the database//
             //In this part of code, it checks if there is a username and password MATCHING, the reason it doesn't check if username is true or password is true is for safety//
             //It is easier to check if a singular name is correct, than to check if both a username and password is matching, as in there are far more combinations and it is far harder to hack//
             //Since the values will be hashed, it will ensure an even safer system//
@@ -128,15 +159,35 @@ public class DBMetoder {
         }
     }
 
-}
+    String Hash(String inputTekst) throws SQLException, Exception {
+        try {
+            //Vha. MessageDigest kan vi anvende en hashing algoritme.... her SHA-256 ...
+            //prøv f.eks. MD5 og se om du kan bryde den ved at søge på nettet!
+            MessageDigest md = MessageDigest.getInstance("SHA-256");
 
-// INVOLVER OM NAVNET EKSISTERER ALLEREDE OG TILFØJ FEJL BESKED//
-/*
-        try{
-            u.getIdUser() =
-             
+            //MassageDigest objektet "fodres" med teksten, der skal "hashes"
+            md.update(inputTekst.getBytes());
+
+            //digest funktionen giver "hash-værdien", men i hexadecimale bytes 
+            byte[] byteList = md.digest();
+
+            //Her anvendes processings hex funktion, der kan konvertere hexadecimale bytes til Strings
+            //så det er muligt at læse "hash-værdien"
+            StringBuffer hashedValueBuffer = new StringBuffer();
+            for (byte b : byteList) {
+                hashedValueBuffer.append(Integer.toHexString(b));
+            }
+
+            //Her udskrives den oprindelige tekst
+            System.out.println("Den oprindelige tekst: " + inputTekst);
+            //Her udskrives "hash-værdien" af teksten
+
+            System.out.println("SHA-256 værdien af teksten: " + hashedValueBuffer.toString());
+
+            return hashedValueBuffer.toString();
+        } catch (Exception e) {
+            System.out.println("Exception: " + e);
+            return "";
         }
-        
-                 
-        }
- */
+    }
+}
