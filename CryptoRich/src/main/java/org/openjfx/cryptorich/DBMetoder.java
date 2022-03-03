@@ -21,7 +21,6 @@ public class DBMetoder {
     private final String connectionString = "jdbc:sqlite:src/cryptoRichDB.db";
     public String UserExists;
     public String verifyMessage;
-    public String LoginString;
 
     public void RegisterUser(User u, String userConfirm) throws SQLException, Exception {
         Connection conn = null;
@@ -142,12 +141,12 @@ public class DBMetoder {
 
             if (rs.next()) {
                 verifyMessage = "Correct user and pass";
-                LoginString = "WorkingTest";
+    
                 return true;
             } else {
 
                 verifyMessage = "Username or password is incorrect";
-                LoginString = "Not working";
+      
                 return false;
             }
         } catch (SQLException e) {
