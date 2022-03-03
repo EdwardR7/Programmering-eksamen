@@ -142,10 +142,13 @@ public class MainMenuController implements Initializable {
     //Data -> XYChart 
     public void GraphLoad() {
 
-        for (int i = 0; i < Initial; i++) {
-            double x = eth + (Math.floor(Math.random() * (100 - 0.01 + 1) + 0.01));
-            test[i] = test[i] + (x * chance);
+          for (int i = 0; i < Initial; i++) {
+            double chance = (r.nextInt(21) - 10) / 10.0;
+            double price = (r.nextInt(1000 - 10) + 10);
+
+            test[i] = test[i] + (price * chance);
         }
+
 
         PortfolioGraph.getData().clear();
 
