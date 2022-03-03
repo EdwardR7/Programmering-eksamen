@@ -123,30 +123,51 @@ import javafx.scene.control.ToggleGroup;
         WatchList.setText(new String(charArray));
     }
      
+     
+     //Mulige assets at købe
+    public double eth = 3000;
+    public double btc = 35000;
+   public double Cardano = 10;
+    public double Loopring = 3;
+       public double Solana = 150;
+    
     
     //LineChart - vores graf 
     //Data -> XYChart 
      public void GraphLoad(){
-         
+            
+       
+        
+          double x = eth + (Math.floor(Math.random()*(500-100+1)+100));
+           double x1 = (eth + btc)+(Math.floor(Math.random()*(3000-100+1)+100));
+            double x2 = (eth + btc+Loopring)+Math.floor(Math.random()*(4000-100+1)+100);
+            double x3 = (eth + btc + Cardano+Loopring)+Math.floor(Math.random()*(3500-100+1)+100);
+           double x4 = (eth + btc + Cardano + eth+Loopring)+Math.floor(Math.random()*(4000-100+1)+100);
+            double x5 = (eth + btc + Cardano + eth + Solana+Loopring)+Math.floor(Math.random()*(4500-100+1)+100);
+            double x6 = (eth + btc + Cardano + eth + Solana + Loopring+eth)+Math.floor(Math.random()*(4500-100+1)+100);
+           double x7 = (eth + btc + Cardano + eth + Solana + Loopring + btc+eth)+Math.floor(Math.random()*(10000-100+1)+100);
+            double x8 = (eth + btc + Cardano + eth + Solana + Loopring + btc + Cardano+eth)+Math.floor(Math.random()*(10000-100+1)+100);
+             double x9 = (eth + btc + Cardano + eth + Solana + Loopring + btc + Cardano + eth+Loopring)+Math.floor(Math.random()*(13000-100+1)+100);
+          
+            
      //Clear data sådan at den kun viser en update pr. gang man kører denne method    
      PortfolioGraph.getData().clear();
      
      //Laver vores series
      XYChart.Series<String, Number> series = new XYChart.Series<String, Number>();
-     
+    
      //Definerer vores punkter
-     series.getData().add(new XYChart.Data<String, Number>("Jan", 200));
-     series.getData().add(new XYChart.Data<String, Number>("Feb", 300));
-     series.getData().add(new XYChart.Data<String, Number>("Marts", 400));
-     series.getData().add(new XYChart.Data<String, Number>("April", 200));
-     series.getData().add(new XYChart.Data<String, Number>("Maj", 300));
-     series.getData().add(new XYChart.Data<String, Number>("Juni", 400));
-     series.getData().add(new XYChart.Data<String, Number>("Juli", 400));
-     series.getData().add(new XYChart.Data<String, Number>("Aug", 800));
-     series.getData().add(new XYChart.Data<String, Number>("Sep", 700));
-     series.getData().add(new XYChart.Data<String, Number>("Okt", 900));
-     series.getData().add(new XYChart.Data<String, Number>("Nov", 850));
-     series.getData().add(new XYChart.Data<String, Number>("Dec", 1000));
+     series.getData().add(new XYChart.Data<String, Number>("1", x));
+     series.getData().add(new XYChart.Data<String, Number>("2", x1));
+     series.getData().add(new XYChart.Data<String, Number>("3", x2));
+     series.getData().add(new XYChart.Data<String, Number>("4", x3));
+     series.getData().add(new XYChart.Data<String, Number>("5", x4));
+     series.getData().add(new XYChart.Data<String, Number>("6", x5));
+     series.getData().add(new XYChart.Data<String, Number>("7", x6));
+     series.getData().add(new XYChart.Data<String, Number>("8", x7));
+     series.getData().add(new XYChart.Data<String, Number>("9", x8));
+     series.getData().add(new XYChart.Data<String, Number>("10", x9));
+    
      
     //Giver vores LineChart dataen fra vores series 
     PortfolioGraph.getData().add(series);
