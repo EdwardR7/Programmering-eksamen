@@ -109,7 +109,7 @@ public class ForventetAfkastController implements Initializable {
         }
         
 //Ændre vores label til værdien af x            
-       PorteføljeLabel.setText(Double.toString(x)+" kr");
+       PorteføljeLabel.setText(Float.toString((float) x)+" kr");
 		
       
         }
