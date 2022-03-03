@@ -6,39 +6,26 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
-<?import javafx.scene.control.Menu?>
-<?import javafx.scene.control.MenuBar?>
-<?import javafx.scene.control.RadioMenuItem?>
 <?import javafx.scene.control.TextArea?>
-<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" accessibleRole="LIST_VIEW" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.openjfx.cryptorich.MainMenuController">
+<AnchorPane id="AnchorPane" accessibleRole="LIST_VIEW" prefHeight="697.0" prefWidth="1251.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.openjfx.cryptorich.MainMenuController">
    <children>
-      <Text layoutX="583.0" layoutY="205.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Watchlist">
-         <font>
-            <Font size="15.0" />
-         </font>
-      </Text>
-      <Text layoutX="680.0" layoutY="204.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Popular assets">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Text>
-      <ListView fx:id="AssetList" layoutX="679.0" layoutY="210.0" prefHeight="303.0" prefWidth="88.0" />
-      <Text layoutX="38.0" layoutY="92.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Portfolio balance:">
-         <font>
-            <Font size="21.0" />
-         </font>
-      </Text>
-      <Label layoutX="205.0" layoutY="74.0" text="0$">
+      <ImageView fitHeight="697.0" fitWidth="1251.0">
+         <image>
+            <Image url="@Icons/Overview.png" />
+         </image>
+      </ImageView>
+      <ListView fx:id="AssetList" layoutX="1055.0" layoutY="117.0" prefHeight="239.0" prefWidth="142.0" style="-fx-background-color: tr;" />
+      <Label layoutX="184.0" layoutY="89.0" text="0$">
          <font>
             <Font size="19.0" />
          </font>
       </Label>
-      <LineChart fx:id="PortfolioGraph" layoutX="-10.0" layoutY="112.0" legendVisible="false" prefHeight="440.0" prefWidth="560.0">
+      <LineChart fx:id="PortfolioGraph" layoutX="7.0" layoutY="112.0" legendVisible="false" prefHeight="440.0" prefWidth="660.0" style="-fx-background-color: tr; -fx-alternative-column-fill-visible: tr; -fx-alternative-row-fill-visible: tr;">
         <xAxis>
           <CategoryAxis animated="false" tickLabelGap="0.1" tickLength="1.0" tickMarkVisible="false" />
         </xAxis>
@@ -46,34 +33,11 @@
           <NumberAxis animated="false" label="Værdi" side="LEFT" tickLabelGap="0.1" tickLength="6.0" upperBound="1000.0" />
         </yAxis>
       </LineChart>
-      <Button fx:id="AssetButton" layoutX="570.0" layoutY="512.0" mnemonicParsing="false" onAction="#AddAssets" prefHeight="27.0" prefWidth="88.0" text="Add asset" />
-      <MenuBar prefHeight="29.0" prefWidth="800.0">
-        <menus>
-          <Menu mnemonicParsing="false" text="Oversigt">
-            <items>
-                  <RadioMenuItem mnemonicParsing="false" onAction="#switchToMinMainMenu" text="Min portefølje">
-                     <toggleGroup>
-                        <ToggleGroup fx:id="Menu" />
-                     </toggleGroup>
-                  </RadioMenuItem>
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Konto">
-            <items>
-                  <RadioMenuItem mnemonicParsing="false" onAction="#switchToKøbSælg" text="Køb/sælg" toggleGroup="$Menu" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Simulation">
-            <items>
-                  <RadioMenuItem mnemonicParsing="false" onAction="#switchToForventetAfkast" text="Forventet afkast" toggleGroup="$Menu" />
-            </items>
-          </Menu>
-        </menus>
-      </MenuBar>
-      <Text layoutX="572.0" layoutY="96.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sorteringsalgoritme Popular assets:" />
-      <Button fx:id="BubbleAlgoritme" layoutX="572.0" layoutY="104.0" mnemonicParsing="false" onAction="#SorteringsalgoritmeBubble" prefHeight="27.0" prefWidth="173.0" text="Bubble algorithm" />
-      <TextArea fx:id="WatchList" accessibleRole="LIST_VIEW" editable="false" layoutX="569.0" layoutY="210.0" prefHeight="303.0" prefWidth="88.0" wrapText="true" />
-      <Button fx:id="RemoveAsset" layoutX="680.0" layoutY="512.0" mnemonicParsing="false" onAction="#RemoveAsset" prefHeight="27.0" prefWidth="86.0" text="Remove" />
-      <Button fx:id="GraphUpdater" layoutX="270.0" layoutY="552.0" mnemonicParsing="false" onAction="#GraphLoad" text="Update graph" />
+      <Button fx:id="AssetButton" layoutX="908.0" layoutY="160.0" mnemonicParsing="false" onAction="#AddAssets" prefHeight="48.0" prefWidth="106.0" style="-fx-background-color: tr;" text="Add asset" textFill="TRANSPARENT" />
+      <Button fx:id="BubbleAlgoritme" layoutX="723.0" layoutY="385.0" mnemonicParsing="false" onAction="#SorteringsalgoritmeBubble" prefHeight="48.0" prefWidth="142.0" style="-fx-background-color: tr;" text="Bubble algorithm" textFill="TRANSPARENT" />
+      <TextArea fx:id="WatchList" accessibleRole="LIST_VIEW" editable="false" layoutX="723.0" layoutY="117.0" prefHeight="239.0" prefWidth="142.0" style="-fx-background-color: tr;" wrapText="true" />
+      <Button fx:id="RemoveAsset" layoutX="908.0" layoutY="232.0" mnemonicParsing="false" onAction="#RemoveAsset" prefHeight="55.0" prefWidth="106.0" style="-fx-background-color: tr;" text="Remove" textFill="TRANSPARENT" />
+      <Button fx:id="GraphUpdater" layoutX="275.0" layoutY="606.0" mnemonicParsing="false" onAction="#GraphLoad" prefHeight="48.0" prefWidth="154.0" style="-fx-background-color: tr;" text="Update graph" textFill="TRANSPARENT" />
+      <Button fx:id="sssss" layoutX="604.0" layoutY="8.0" mnemonicParsing="false" onAction="#switchToKøbSælg" prefHeight="28.0" prefWidth="59.0" style="-fx-background-color: tr;" text="trade" textFill="TRANSPARENT" />
    </children>
 </AnchorPane>
