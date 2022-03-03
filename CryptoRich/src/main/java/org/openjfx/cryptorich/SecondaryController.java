@@ -33,6 +33,7 @@ public class SecondaryController {
         if(!txtLoginUsername.getText().isBlank() && !txtLoginPassword.getText().isBlank()){
             if(DB.loginVerficiation(txtLoginUsername.getText(), txtLoginPassword.getText())){
               MessageBoxLogin.setText(DB.verifyMessage);
+              switchToMainMenu();
             }else{
               MessageBoxLogin.setText(DB.verifyMessage);
                 
