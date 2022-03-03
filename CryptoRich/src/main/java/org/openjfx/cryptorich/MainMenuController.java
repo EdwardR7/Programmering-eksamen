@@ -122,14 +122,16 @@ public class MainMenuController implements Initializable {
     }
 
     //Mulige assets at købe
-
-    public double eth;
-    public double btc;
-    public double Cardano;
-    public double Loopring;
-    public double Solana;
+    public double x = Math.floor(Math.random() * (500 - 100 + 1) + 100);
+    public double eth = x;
+    public double btc = x;
+    public double Cardano = x;
+    public double Loopring = x;
+    public double Solana = x;
 
     Random r = new Random();
+    double chance = (r.nextInt(21) - 10) / 10.0;
+    double price = (r.nextInt(100 - 10) + 10);
 
 
     public int UpdateAmount = 100;
@@ -141,10 +143,8 @@ public class MainMenuController implements Initializable {
     public void GraphLoad() {
 
         for (int i = 0; i < Initial; i++) {
-    double chance = (r.nextInt(21) - 10) / 10.0;
-    double price = (r.nextInt(1000 - 10) + 10);
-
-            test[i] = test[i]+(price * chance);
+            double x = eth + (Math.floor(Math.random() * (100 - 0.01 + 1) + 0.01));
+            test[i] = test[i] + (x * chance);
         }
 
         PortfolioGraph.getData().clear();
@@ -154,6 +154,7 @@ public class MainMenuController implements Initializable {
 
         //Definerer vores punkter
         series.getData().add(new XYChart.Data<String, Number>("1", test[0]));
+
         series.getData().add(new XYChart.Data<String, Number>("2", test[1]));
         series.getData().add(new XYChart.Data<String, Number>("3", test[2]));
         series.getData().add(new XYChart.Data<String, Number>("4", test[3]));
