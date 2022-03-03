@@ -4,6 +4,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -32,5 +33,9 @@
       <ListView layoutX="337.0" layoutY="152.0" prefHeight="381.0" prefWidth="213.0" style="-fx-background-color: tr;" />
       <Button layoutX="890.0" layoutY="435.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="72.0" style="-fx-background-color: tr;" text="Buy" textFill="TRANSPARENT" />
       <Button layoutX="1061.0" layoutY="435.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="72.0" style="-fx-background-color: tr;" text="Sell" textFill="TRANSPARENT" />
+      <ListView fx:id="AssetList" layoutX="1065.0" layoutY="127.0" prefHeight="239.0" prefWidth="142.0" style="-fx-background-color: tr;" />
+      <ListView fx:id="AssetList1" layoutX="160.0" layoutY="152.0" prefHeight="239.0" prefWidth="142.0" />
+      <TextArea layoutX="55.0" layoutY="213.0" prefHeight="68.0" prefWidth="79.0" />
+      <Button layoutX="55.0" layoutY="281.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="79.0" text="add" />
    </children>
 </AnchorPane>
