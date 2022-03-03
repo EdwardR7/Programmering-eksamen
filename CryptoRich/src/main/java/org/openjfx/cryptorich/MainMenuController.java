@@ -169,7 +169,7 @@ public class MainMenuController implements Initializable {
         PortfolioGraph.getData().add(series);
 
         //Exit method. Returner en gang når method er kørt, da det er public final
-     
+        PortfolioGraph.animatedProperty();
 
     }
 }
