@@ -39,5 +39,6 @@
       <Button fx:id="RemoveAsset" layoutX="908.0" layoutY="232.0" mnemonicParsing="false" onAction="#RemoveAsset" prefHeight="55.0" prefWidth="106.0" style="-fx-background-color: tr;" text="Remove" textFill="TRANSPARENT" />
       <Button fx:id="GraphUpdater" layoutX="275.0" layoutY="606.0" mnemonicParsing="false" onAction="#GraphLoad" prefHeight="48.0" prefWidth="154.0" style="-fx-background-color: tr;" text="Update graph" textFill="TRANSPARENT" />
       <Button fx:id="sssss" layoutX="604.0" layoutY="8.0" mnemonicParsing="false" onAction="#switchToKøbSælg" prefHeight="28.0" prefWidth="59.0" style="-fx-background-color: tr;" text="trade" textFill="TRANSPARENT" />
+      <Button fx:id="predictswitch" layoutX="694.0" layoutY="8.0" mnemonicParsing="false" onAction="#switchToForventetAfkast" prefHeight="28.0" prefWidth="59.0" style="-fx-background-color: tr;" text="Predict" textFill="TRANSPARENT" />
    </children>
 </AnchorPane>
