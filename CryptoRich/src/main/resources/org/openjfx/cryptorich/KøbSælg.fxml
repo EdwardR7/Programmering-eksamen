@@ -32,5 +32,6 @@
       <ListView layoutX="337.0" layoutY="152.0" prefHeight="381.0" prefWidth="213.0" style="-fx-background-color: tr;" />
       <Button layoutX="890.0" layoutY="435.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="72.0" style="-fx-background-color: tr;" text="Buy" textFill="TRANSPARENT" />
       <Button layoutX="1061.0" layoutY="435.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="72.0" style="-fx-background-color: tr;" text="Sell" textFill="TRANSPARENT" />
+      <Button layoutX="680.0" layoutY="6.0" mnemonicParsing="false" onAction="#switchToForventetAfkast" prefHeight="28.0" prefWidth="82.0" style="-fx-background-color: tr;" text="Apply" textFill="TRANSPARENT" />
    </children>
 </AnchorPane>
